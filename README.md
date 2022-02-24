@@ -1,6 +1,6 @@
 # ✍️React Native App Setp by Step using Expo✍️
 
-# Rgister Screen
+# Android Emulator
 
 ![](assets/images/android.jpg)
 
@@ -50,8 +50,6 @@
 
 ### Environment setup: https://reactnative.dev/docs/environment-setup
 
-### Tutorials: https://www.youtube.com/watch?v=DnntmeVPLzc
-
 ### Getting Started: https://reactnative.dev/docs/getting-started
 
 ### Navigation: https://reactnavigation.org/docs/getting-started
@@ -61,11 +59,3 @@
 ### Elements: https://reactnativeelements.com/docs
 
 ### Gifted Chat: https://github.com/FaridSafi/react-native-gifted-chat
-
-
-
-### Generate Deploy keys (personal use): 
-
-````
-ssh-keygen -t rsa -b 4096 -C "your_email@gmail.com"
-````
