@@ -1,4 +1,18 @@
-# ✍️Create React Native App Setp by Step Guide using Expo✍️
+# ✍️React Native App Setp by Step using Expo✍️
+
+# Rgister Screen
+
+![](assets/images/android.jpg)
+
+# Rgister Screen
+
+![](assets/images/register.png)
+
+# Login Screen
+
+![](assets/images/login.png)
+
+
 
 ### 1. Creating a new application
 ```
