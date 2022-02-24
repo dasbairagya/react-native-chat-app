@@ -23,10 +23,39 @@ const Login = ({navigation}) => {
         onChangeText={(password) => setPassword(password)}
         secureTextEntry
       />
+      <View>
+        <Button title='LOGIN' 
+          icon={{
+                name: 'arrow-right',
+                type: 'font-awesome',
+                size: 15,
+                color: 'white',
+              }}
+            iconRight
+            iconContainerStyle={{ marginLeft: 10 }}
+            titleStyle={{ fontWeight: '700' }}
+            buttonStyle={{
+              backgroundColor: 'rgba(199, 43, 98, 1)',
+              borderColor: 'transparent',
+              borderWidth: 0,
+              borderRadius: 10,
+              width: 200,
+              marginVertical:20
+            }}
+        />
 
-        <Button title='Login' style={styles.buttons} />
-        <Button title='Register' style={styles.button} onPress={() => navigation.navigate('Register') }/>
+        <Button title='REGISTER' 
+        icon={{
+                name: 'user',
+                type: 'font-awesome',
+                size: 15,
+                color: 'white',
+              }}
+          style={styles.buttons}  
+          onPress={() => navigation.navigate('Register') }
+        />
 
+      </View>
     </View>
   )
 }
@@ -40,11 +69,12 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     buttons: {
-        marginTop: 30,
-        // padding:15,
+        marginTop: 50,
+        padding:15,
         color: '#ccc',
-        width: 400,
+        width: 200,
         borderWidth: 0,
-        borderRadius: 30,
+        borderRadius: 10,
+      
     }
 })

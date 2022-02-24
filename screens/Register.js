@@ -72,7 +72,15 @@ const Register = () => {
         onChangeText={(imageUrl) => setImageUrl(imageUrl)}
       />
 
-        <Button title='register' style={styles.button} onPress={register}/>
+        <Button 
+        title='REGISTER' 
+        icon={{
+                name: 'user',
+                type: 'font-awesome',
+                size: 15,
+                color: 'white',
+              }}
+        style={styles.button} onPress={register}/>
 
     </View>
   )
