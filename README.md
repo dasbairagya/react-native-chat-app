@@ -4,7 +4,7 @@
 
 ![](assets/images/android.jpg)
 
-# Rgister Screen
+# Register Screen
 
 ![](assets/images/register.jpg)
 
