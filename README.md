@@ -6,11 +6,11 @@
 
 # Rgister Screen
 
-![](assets/images/register.png)
+![](assets/images/register.jpg)
 
 # Login Screen
 
-![](assets/images/login.png)
+![](assets/images/login.jpg)
 
 
 
