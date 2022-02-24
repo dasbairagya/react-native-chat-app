@@ -48,6 +48,10 @@
 
 ### Gifted Chat: https://github.com/FaridSafi/react-native-gifted-chat
 
-ssh-keygen -t ed25519 -C "dasbairagyagopal@gmail.com"
 
-ssh-keygen -t rsa -b 4096 -C "dasbairagyagopal@gmail.com"
+
+### Generate Deploy keys (personal use): 
+
+````
+ssh-keygen -t rsa -b 4096 -C "your_email@gmail.com"
+````
