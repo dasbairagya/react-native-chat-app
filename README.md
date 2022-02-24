@@ -6,7 +6,7 @@
 
 # Login & Register Screen
 
-![](assets/images/login.jpg)  ![](assets/images/Register.jpg)
+![](assets/images/login.jpg)  ![](assets/images/register.jpg)
 
 
 ### 1. Creating a new application
