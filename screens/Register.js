@@ -80,7 +80,14 @@ const Register = () => {
                 size: 15,
                 color: 'white',
               }}
-        style={styles.button} onPress={register}/>
+        buttonStyle={{
+              borderColor: 'transparent',
+              borderWidth: 0,
+              borderRadius: 10,
+              width: 200,
+              marginVertical:20
+            }}
+        onPress={register}/>
 
     </View>
   )

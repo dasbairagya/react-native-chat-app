@@ -1,17 +1,12 @@
-# ✍️React Native App Setp by Step using Expo✍️
+# ✍️React Native App Setp By Step Using Expo✍️
 
 # Android Emulator
 
 ![](assets/images/android.jpg)
 
-# Register Screen
+# Login & Register Screen
 
-![](assets/images/register.jpg)
-
-# Login Screen
-
-![](assets/images/login.jpg)
-
+![](assets/images/login.jpg)  ![](assets/images/Register.jpg)
 
 
 ### 1. Creating a new application
