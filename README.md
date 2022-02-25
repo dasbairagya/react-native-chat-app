@@ -1,12 +1,12 @@
 # ✍️React Native App Setp By Step Using Expo✍️
 
-# Android Emulator
+# Chat Screen
 
-![](assets/images/android.jpg)
+![](assets/images/chat.png)
 
 # Login & Register Screen
 
-![](assets/images/login.jpg)  ![](assets/images/register.jpg)
+![](assets/images/login.png)  ![](assets/images/register.png)
 
 
 ### 1. Creating a new application
@@ -18,7 +18,7 @@
 > cd rn-chat
 
 ````
-### 2. Dependencis
+### 2. Dependencies
 
 ````
 > npm install react-native-gifted-chat --save

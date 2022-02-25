@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native'
 import React, {useState} from 'react'
-import { Input, Icon, Button } from 'react-native-elements';
+import { Input, Button } from 'react-native-elements';
 import { getAuth, createUserWithEmailAndPassword, updateProfile  } from "firebase/auth";
-import '../Firebase'
+import '../Firebase';
 
 
-const Register = () => {
+const Register = ({navigation}) => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -20,16 +20,18 @@ const Register = () => {
           const user = userCredential.user;
           updateProfile(auth.currentUser, {
             displayName: name, 
-            photoURL: imageUrl ? imageUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.kindpng.com%2Fimgv%2FiThJmoo_white-gray-circle-avatar-png-transparent-png%2F&psig=AOvVaw0-tQ9pN5Ie2FJuzgr1bZ2e&ust=1645742170074000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPCm-73xlvYCFQAAAAAdAAAAABADhttps://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fillustrations%2Favatar&psig=AOvVaw0-tQ9pN5Ie2FJuzgr1bZ2e&ust=1645742170074000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPCm-73xlvYCFQAAAAAdAAAAABAP"
+            photoURL: imageUrl ? imageUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Fso%2Fuser&psig=AOvVaw04-Yu48P788mpl9_dyBxQs&ust=1645856763756000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCICR-7ecmvYCFQAAAAAdAAAAABAD"
           }).then(() => {
             // Profile updated!
             alert('User added!');
+            navigation.replace('Chat');
             // ...
           }).catch((error) => {
             // An error occurred
             // ...
           });
           // ...
+          // navigation.popToTop();
         })
         .catch((error) => {
           // const errorCode = error.code;
@@ -40,6 +42,7 @@ const Register = () => {
     }
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Input
         placeholder='Enter your name'
@@ -58,7 +61,7 @@ const Register = () => {
 
       <Input
         placeholder='Enter your password'
-        label='password'
+        label='Password'
         leftIcon={{ type: 'material', name: 'lock' }}
         value={password}
         onChangeText={(password) => setPassword(password)}
@@ -71,7 +74,7 @@ const Register = () => {
         value={imageUrl}
         onChangeText={(imageUrl) => setImageUrl(imageUrl)}
       />
-
+      <TouchableOpacity>
         <Button 
         title='REGISTER' 
         icon={{
@@ -87,9 +90,12 @@ const Register = () => {
               width: 200,
               marginVertical:20
             }}
-        onPress={register}/>
+        onPress={register}
+        />
+      </TouchableOpacity>
 
     </View>
+    </ScrollView>
   )
 }
 

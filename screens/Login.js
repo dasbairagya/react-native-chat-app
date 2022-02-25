@@ -1,10 +1,50 @@
 import { StyleSheet, View } from 'react-native'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Input, Icon, Button } from 'react-native-elements';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import '../Firebase';
 
 const Login = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    //Auto login
+    useEffect( ()=>{
+      const auth = getAuth();
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          navigation.replace('Chat');
+          // ...
+        } else {
+          // User is signed out
+          navigation.canGoBack() && 
+          navigation.popToTop()
+          // ...
+        }
+      });
+    }
+    )
+
+    const signIn = ()=>{
+      const auth = getAuth();
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          navigation.replace('Chat');
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
+    }
+
+
   return (
     <View style={styles.container}>
       <Input
@@ -17,7 +57,7 @@ const Login = ({navigation}) => {
 
       <Input
         placeholder='Enter your password'
-        label='password'
+        label='Password'
         leftIcon={{ type: 'material', name: 'lock' }}
         value={password}
         onChangeText={(password) => setPassword(password)}
@@ -29,7 +69,7 @@ const Login = ({navigation}) => {
                 name: 'arrow-right',
                 type: 'font-awesome',
                 size: 15,
-                color: 'white',
+                color: 'white'
               }}
             iconRight
             iconContainerStyle={{ marginLeft: 10 }}
@@ -42,6 +82,7 @@ const Login = ({navigation}) => {
               width: 200,
               marginVertical:20
             }}
+            onPress={signIn}
         />
 
         <Button title='REGISTER' 
@@ -51,7 +92,14 @@ const Login = ({navigation}) => {
                 size: 15,
                 color: 'white',
               }}
-          style={styles.buttons}  
+          titleStyle={{ fontWeight: '700' }}
+          buttonStyle={{
+            borderColor: 'transparent',
+            borderWidth: 0,
+            borderRadius: 10,
+            width: 200,
+            marginVertical:20
+          }}
           onPress={() => navigation.navigate('Register') }
         />
 
@@ -69,12 +117,12 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     buttons: {
-        marginTop: 50,
-        padding:15,
-        color: '#ccc',
-        width: 200,
+        borderRadius: 10,
+        borderColor: 'transparent',
         borderWidth: 0,
         borderRadius: 10,
+        width: 200,
+        marginVertical:20
       
     }
 })
